@@ -7,4 +7,9 @@ english:
   description: Language that everyone knows
 
 subject_without_teacher:
-  name: Subject without teacher
+  name: Yautja language
+  description: Guys, where do we even hire the native speaker?
+
+chemistry:
+  name: Chemistry
+  description: Yeah, science!

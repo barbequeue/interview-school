@@ -1,11 +1,31 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+chemistry_student_1:
+  first_name: Jesse
+  last_name: Pinkman
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+chemistry_student_2:
+  first_name: Walter
+  last_name: White Jr.
+
+chemistry_student_3:
+  first_name: Jake
+  last_name: Pinkman
+
+math_student_1:
+  first_name: Joel
+  last_name: Miller
+
+math_student_2:
+  first_name: Ellie
+  last_name: Williams
+
+english_student_1:
+  first_name: Filavandrel
+  last_name: aén Fidháil
+
+english_student_2:
+  first_name: Caranthir
+  last_name: Ar-Feiniel
+
+english_student_3:
+  first_name: Francesca
+  last_name: Findabair

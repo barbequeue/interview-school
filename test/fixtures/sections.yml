@@ -1,11 +1,41 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+math_section_with_math_teacher:
+  teacher: math_teacher
+  subject: math
+  classroom: classroom_101_a
+  starting_at: 2024-01-01 10:00:00
+  duration: 80
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+english_section_with_english_teacher:
+  teacher: english_teacher
+  subject: english
+  classroom: classroom_101_a
+  starting_at: 2024-01-01 11:30:00
+  duration: 50
+
+math_section_with_math_and_english_teacher:
+  teacher: math_and_english_teacher
+  subject: math
+  classroom: classroom_101_b
+  starting_at: 2024-01-01 10:00:00
+  duration: 80
+
+english_section_with_math_and_english_teacher:
+  teacher: math_and_english_teacher
+  subject: english
+  classroom: classroom_101_b
+  starting_at: 2024-01-01 11:30:00
+  duration: 80
+
+chemistry_section_with_chemistry_teacher:
+  teacher: chemistry_teacher
+  subject: chemistry
+  classroom: classroom_102
+  starting_at: 2024-01-02 12:00:00
+  duration: 80
+
+chemistry_section_with_chemistry_teacher_without_students:
+  teacher: chemistry_teacher
+  subject: chemistry
+  classroom: classroom_102
+  starting_at: 2024-01-03 10:00:00
+  duration: 80

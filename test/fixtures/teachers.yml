@@ -1,15 +1,19 @@
 math_teacher:
-  first_name: Math
-  last_name: Teacher
+  first_name: Pierre
+  last_name: de Fermat
 
 english_teacher:
-  first_name: English
-  last_name: Teacher
+  first_name: Winston
+  last_name: Churchill
 
 math_and_english_teacher:
-  first_name: Math and English
-  last_name: Teacher
+  first_name: Alan
+  last_name: Turing
 
 teacher_without_subjects:
-  first_name: Teacher without Subject
-  last_name: Still learning
+  first_name: Luke
+  last_name: Skywalker
+
+chemistry_teacher:
+  first_name: Walter
+  last_name: White
