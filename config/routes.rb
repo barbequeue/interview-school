@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :sections
-  resources :students
+  resources :students do
+    resources :student_sections, shallow: true
+  end
   resources :classrooms
   resources :teachers do
     resources :teacher_subjects, shallow: true

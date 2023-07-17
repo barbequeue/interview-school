@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_17_140315) do
+ActiveRecord::Schema.define(version: 2023_07_17_155026) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "number", null: false
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 2023_07_17_140315) do
     t.index ["subject_id"], name: "index_sections_on_subject_id"
     t.index ["teacher_id", "subject_id", "classroom_id"], name: "index_sections_on_teacher_id_and_subject_id_and_classroom_id"
     t.index ["teacher_id"], name: "index_sections_on_teacher_id"
+  end
+
+  create_table "student_sections", force: :cascade do |t|
+    t.integer "student_id", null: false
+    t.integer "section_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["section_id"], name: "index_student_sections_on_section_id"
+    t.index ["student_id", "section_id"], name: "index_student_sections_on_student_id_and_section_id"
+    t.index ["student_id"], name: "index_student_sections_on_student_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -67,6 +77,8 @@ ActiveRecord::Schema.define(version: 2023_07_17_140315) do
   add_foreign_key "sections", "classrooms"
   add_foreign_key "sections", "subjects"
   add_foreign_key "sections", "teachers"
+  add_foreign_key "student_sections", "sections"
+  add_foreign_key "student_sections", "students"
   add_foreign_key "teacher_subjects", "subjects"
   add_foreign_key "teacher_subjects", "teachers"
 end
