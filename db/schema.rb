@@ -10,12 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_17_120812) do
+ActiveRecord::Schema.define(version: 2023_07_17_140315) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.integer "teacher_id", null: false
+    t.integer "subject_id", null: false
+    t.integer "classroom_id", null: false
+    t.datetime "starting_at", null: false
+    t.integer "duration", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["classroom_id"], name: "index_sections_on_classroom_id"
+    t.index ["subject_id"], name: "index_sections_on_subject_id"
+    t.index ["teacher_id", "subject_id", "classroom_id"], name: "index_sections_on_teacher_id_and_subject_id_and_classroom_id"
+    t.index ["teacher_id"], name: "index_sections_on_teacher_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -50,6 +64,9 @@ ActiveRecord::Schema.define(version: 2023_07_17_120812) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "sections", "classrooms"
+  add_foreign_key "sections", "subjects"
+  add_foreign_key "sections", "teachers"
   add_foreign_key "teacher_subjects", "subjects"
   add_foreign_key "teacher_subjects", "teachers"
 end
