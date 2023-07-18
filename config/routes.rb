@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :sections
   resources :students do
-    resources :student_sections, shallow: true
+    resources :student_sections, only: [:new, :create, :destroy], shallow: true
   end
   resources :classrooms
   resources :teachers do

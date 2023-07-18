@@ -11,16 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :starting_at %>
-    <%= form.text_field :starting_at %>
-  </div>
-
-  <div class="field">
-    <%= form.label :duration %>
-    <%= form.text_field :duration %>
-  </div>
-
   <div class='field'>
     <%= form.label :teacher_id %>
     <%= form.select :teacher_id, options_from_collection_for_select(Teacher.all, :id, :first_and_last_name), { include_blank: @section.teacher_id.nil? } %>
@@ -34,6 +24,16 @@
   <div class='field'>
     <%= form.label :classroom_id %>
     <%= form.select :classroom_id, options_from_collection_for_select(Classroom.all, :id, :number), { include_blank: @section.classroom_id.nil? } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :starting_at %>
+    <%= form.datetime_field :starting_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
   </div>
 
   <div class="actions">

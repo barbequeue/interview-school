@@ -12,3 +12,19 @@
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+
+<p>
+  <strong>Sections</strong>
+  <ul>
+    <% @student.student_sections.each do |student_section| %>
+      <%= tag.li id: "student-section-#{student_section.id}" do %>
+        <%= student_section.section.subject.name %>
+        <%= student_section.section.starting_at %>
+        <%= student_section.section.duration %> minutes
+        <%= link_to 'Details', section_path(student_section.section) %>
+        <%= link_to 'Leave', student_section_path(student_section), remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  </ul>
+  <%= render 'student_sections/new' %>
+</p>

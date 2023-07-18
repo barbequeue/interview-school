@@ -27,3 +27,14 @@
 
 <%= link_to 'Edit', edit_section_path(@section) %> |
 <%= link_to 'Back', sections_path %>
+
+<p>
+  <strong>Students</strong>
+  <ul>
+    <% @section.student_sections.each do |student_section| %>
+      <li>
+        <%= link_to student_section.student.first_and_last_name, student_path(student_section.section) %>
+      </li>
+    <% end %>
+  </ul>
+</p>
