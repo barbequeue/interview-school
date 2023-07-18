@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :duration %>
-    <%= form.text_field :duration %>
+    <%= form.select :duration, Section::DURATIONS, { include_blank: @section.duration.nil? } %>
   </div>
 
   <div class="actions">

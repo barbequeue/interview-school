@@ -8,6 +8,12 @@ class Section < ApplicationRecord
   has_many :student_sections, dependent: :destroy
   has_many :students, through: :teacher_subjects
 
+  validates :starting_at, :duration, presence: true
+
+  validate do |section|
+    SectionValidator.validate(section)
+  end
+
   default_scope { select("sections.*") }
   scope :with_teachers, -> do
     select("teachers.first_name as teacher_first_name, teachers.last_name as teacher_last_name")
@@ -30,4 +36,28 @@ class Section < ApplicationRecord
               group by section_id
             ) as students_per_section on students_per_section.section_id = sections.id")
   end
+end
+
+class SectionValidator
+  def self.validate(section)
+    new(section).validate
+  end
+
+  def initialize(section)
+    @section = section
+  end
+
+  def validate
+    # TODO: Move to Query object
+    # TODO: Add advanced validation (e.g. teacher is busy at the time)
+    if section.teacher.present? && section.subject.present?
+      unless TeacherSubject.exists?(teacher: section.teacher, subject: section.subject)
+        section.errors.add(:teacher, :invalid, message: "doesn't teach the subject")
+      end
+    end
+  end
+
+  private
+
+  attr_reader :section
 end
