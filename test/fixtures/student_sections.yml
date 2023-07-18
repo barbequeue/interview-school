@@ -1,0 +1,67 @@
+chemistry_student_1_on_math_section_with_math_teacher:
+  student: chemistry_student_1
+  section: math_section_with_math_teacher
+
+chemistry_student_1_on_english_section_with_english_teacher:
+  student: chemistry_student_1
+  section: english_section_with_english_teacher
+
+chemistry_student_1_on_chemistry_section_with_chemistry_teacher:
+  student: chemistry_student_1
+  section: chemistry_section_with_chemistry_teacher
+
+chemistry_student_2_on_math_section_with_math_teacher:
+  student: chemistry_student_2
+  section: math_section_with_math_teacher
+
+chemistry_student_2_on_english_section_with_math_and_english_teacher:
+  student: chemistry_student_2
+  section: english_section_with_math_and_english_teacher
+
+chemistry_student_2_on_chemistry_section_with_chemistry_teacher:
+  student: chemistry_student_2
+  section: chemistry_section_with_chemistry_teacher
+
+chemistry_student_3_on_math_section_with_math_and_english_teacher:
+  student: chemistry_student_3
+  section: math_section_with_math_and_english_teacher
+
+chemistry_student_3_on_english_section_with_math_and_english_teacher:
+  student: chemistry_student_3
+  section: english_section_with_math_and_english_teacher
+
+chemistry_student_3_on_chemistry_section_with_chemistry_teacher:
+  student: chemistry_student_3
+  section: chemistry_section_with_chemistry_teacher
+
+math_student_1_on_math_section_with_math_teacher:
+  student: math_student_1
+  section: math_section_with_math_teacher
+
+math_student_1_on_chemistry_section_with_chemistry_teacher:
+  student: math_student_1
+  section: chemistry_section_with_chemistry_teacher
+
+math_student_2_on_math_section_with_math_and_english_teacher:
+  student: math_student_2
+  section: math_section_with_math_and_english_teacher
+
+math_student_2_on_chemistry_section_with_chemistry_teacher:
+  student: math_student_2
+  section: chemistry_section_with_chemistry_teacher
+
+english_student_1_on_english_section_with_english_teacher:
+  student: english_student_1
+  section: english_section_with_english_teacher
+
+english_student_2_on_english_section_with_math_and_english_teacher:
+  student: english_student_2
+  section: english_section_with_math_and_english_teacher
+
+english_student_3_on_english_section_with_math_and_english_teacher:
+  student: english_student_3
+  section: english_section_with_math_and_english_teacher
+
+english_student_3_on_chemistry_section_with_chemistry_teacher:
+  student: english_student_3
+  section: chemistry_section_with_chemistry_teacher

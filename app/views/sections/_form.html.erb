@@ -1,0 +1,42 @@
+<%= form_with(model: section, local: true) do |form| %>
+  <% if section.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(section.errors.count, "error") %> prohibited this section from being saved:</h2>
+
+      <ul>
+        <% section.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= form.label :teacher_id %>
+    <%= form.select :teacher_id, options_from_collection_for_select(Teacher.all, :id, :first_and_last_name), { include_blank: @section.teacher_id.nil? } %>
+  </div>
+
+  <div class='field'>
+    <%= form.label :subject_id %>
+    <%= form.select :subject_id, options_from_collection_for_select(Subject.all, :id, :name), { include_blank: @section.subject_id.nil? } %>
+  </div>
+
+  <div class='field'>
+    <%= form.label :classroom_id %>
+    <%= form.select :classroom_id, options_from_collection_for_select(Classroom.all, :id, :number), { include_blank: @section.classroom_id.nil? } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :starting_at %>
+    <%= form.datetime_field :starting_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.select :duration, Section::DURATIONS, { include_blank: @section.duration.nil? } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
