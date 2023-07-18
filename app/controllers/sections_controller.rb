@@ -4,7 +4,7 @@ class SectionsController < ApplicationController
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    @sections = Section.with_teachers.with_subjects.with_classrooms.with_student_counts
   end
 
   # GET /sections/1
